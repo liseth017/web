@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Electronica</title>
+    <link rel="stylesheet" href="carrito.css">
+
+    <script>
+        // Inicializar variables
+        let cart = [];
+        let total = 0;
+
+        // Función para agregar productos al carrito
+        function addToCart(productName, productPrice) {
+            // Agregar producto al carrito
+            cart.push({ name: productName, price: productPrice });
+            
+            // Actualizar total
+            total += productPrice;
+
+            // Renderizar el carrito
+            renderCart();
+        }
+
+        // Función para renderizar el carrito
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalPrice = document.getElementById('total-price');
+
+            // Limpiar la lista de elementos previos
+            cartItems.innerHTML = '';
+
+            // Mostrar los productos en el carrito
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+            });
+
+            // Actualizar el precio total
+            totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        // Función para reiniciar el carrito
+        function resetCart() {
+            // Vaciar el carrito y restablecer el total
+            cart = [];
+            total = 0;
+
+            // Renderizar el carrito vacío
+            renderCart();
+        }
+    </script>
+</head>
+<body bgcolor="#FAFAFA">
+
+    <!-- Logo -->
+  
+
+
+    <div class="logo">
+        <a href="intro.html">
+            <img src="IMAGENES/LOGO.PNG" height="300" width="300" alt="Logo de la tienda">
+
+           </a>
+    </div>
+
+    <br></br>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('IMAGENES/NUBE.JPEG');
+            background-size: cover; /* La imagen cubre todo el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center center; /* Centra la imagen en el fondo */
+            background-attachment: fixed; /* Fija la imagen para que no se mueva al hacer scroll */
+            height: 100vh;
+        }
+        p{
+            color:#6f2b2f;
+            background: rgb(192, 179, 179);
+            width: 10%;
+            height: 2rem;
+            margin: 0px 45% 0px;
+            text-align: center;
+            font-size: 1.2rem;
+            
+        }
+        .redes{
+            background: rgb(36, 35, 35);
+            width: 100%;
+            height: 15%;
+            align-items: center;
+            border-top: 2rem;
+        }
+
+        .redes img{
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+    <hr color="#00FF00"><hr color="#00FF00">
+
+
+    <!-- Carrito de compras -->
+    <div class="cart">
+        <h2>Carrito de compras</h2> 
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: $0.00</p>
+        <button onclick="resetCart()">Reiniciar Carrito</button> <!-- Botón para reiniciar el carrito -->
+         <hr color="#00FF00"><hr color="#00FF00">
+     </div>
+        
+    </div>
+    <hr>
+    <!-- Productos -->
+    <div class="contenedor">
+
+    <div class="pr1">
+<a href="producto1.html">
+
+         <img src="IMAGENES/V8.JPEG" width="500" height="500" alt="JORDAN 1">
+       
+
+            </a>
+            <h2>CARGADOR V8</h2>
+            <h3><p>Precio: $6.00</p></h3>
+            <button onclick="addToCart('CARGADOR V8', 6.00)">Agregar al carrito</button>
+
+             </div>
+       
+        <br><br>
+
+
+
+            <div class="pr1">
+            <a href="producto 2.html">
+
+                <img src="IMAGENES/TIPOC.JPEG" width="500" height="500" alt="JORDAN 1">
+      
+            </a>
+            <h2>CARGADOR TIPO C</h2>
+            <h3><p>Precio: $8.00</p></h3>
+            <button onclick="addToCart('CARGADOR TIPO C', 8.00)">Agregar al carrito</button>
+            
+        </div>
+       
+        <br><br>
+
+        <div class="pr2">
+            <a href="producto 3.html">
+
+            <img src="IMAGENES/IPHONE.JPEG" width="500" height="500" alt="PUMA 180">
+           
+           </a>
+            <h2>CARGADOR IPHONE</h2>
+            <h3><p>Precio: $10.00</p></h3>
+            <button onclick="addToCart('CARGADOR IPHONE', 10.00)">Agregar al carrito</button>
+        </div>
+        
+        <br><br>
+
+        <div class="pr1">
+            <a href="producto 4.HTML">
+
+                <img src="IMAGENES/MANOSLIBRES.JPEG" width="500" height="500" alt="JORDAN 1">
+      
+            </a>
+            <h2>AUDIFONOS MANOS LIBRES</h2>
+            <h3><p>Precio: $4.00</p></h3>
+            <button onclick="addToCart('AUDIFONOS MANOS LIBRES', 4.00)">Agregar al carrito</button>
+            
+        </div>
+       
+        <br><br>
+
+         <div class="pr1">
+            <a href="producto 5.html">
+
+                <img src="IMAGENES/INALAMBRICOS.JPEG" width="500" height="500" alt="JORDAN 1">
+      
+            </a>
+            <h2>AUDIFONOS INALAMBRICOS</h2>
+             <h3><p>Precio: $15.00</p></h3>
+            <button onclick="addToCart('AUDIFONOS INALAMBRICOS', 15.00)">Agregar al carrito</button>
+            
+        </div>
+       
+        <br><br>
+
+         <div class="pr3">
+            <a href="PRODUCTO 6.html">
+
+            <img src="IMAGENES/BLUTU.JPEG" width="500" height="500" alt="NIKE AIR FORCE ONE">
+
+            </a>
+            <h2>AUDIFONOS CON BLUTU</h2>
+            <h3><p>Precio: $25.00</p></h3>
+            <button onclick="addToCart('AUDIFONOS CON BLUTU', 25.00)">Agregar al carrito</button>
+           
+        </div>
+
+    <br><br>
+
+
+        <div class="pr2">
+            <a href="PRODUCTO 7.html">
+
+            <img src="IMAGENES/BATERIA.JPEG" width="500" height="500" alt="NEW BALANCE">
+            
+            </a>
+            <h2>BATERIA PORTATIL</h2>
+            <h3><p>Precio: $20.00</p></h3>
+            <button onclick="addToCart('BATERIA PORTATIL', 20.00)">Agregar al carrito</button>
+        </div>
+        
+        <br><br>
+
+
+    <!-- Redes sociales -->
+    <div class="redes">
+        <a href="https://www.facebook.com/mairalisseth.rivasgonzalez">
+            <img src="IMAGENES/FACE.JPEG" height="50" width="50" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/liz._.017/">
+            <img src="IMAGENES/INSTA.PNG" height="50" width="50" alt="Instagram">
+       
+        </a>
+    </div>
+
+</body>
+</html>
